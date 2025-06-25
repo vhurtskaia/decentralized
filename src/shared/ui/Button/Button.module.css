@@ -1,0 +1,44 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    background: transparent;
+    transition: all 0.4s ease 0s;
+
+    &:hover&:not(.button--background) {
+        background: var(--gradient-main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.button--background {
+    position: relative;
+    background: black;
+    border-radius: 90px;
+    margin: 2px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        background: var(--gradient-main);
+        z-index: -1;
+        border-radius: 90px;
+    }
+
+    &:hover {
+        background: var(--gradient-main);
+    }
+}
+
+.button--big {
+    padding: 22px 48px 24px;
+    font-size: 24px;
+}
+
+.button--small {
+    padding: 14px 32px 16px;
+    font-size: 18px;
+}

@@ -1,52 +1,57 @@
 @font-face {
-  font-family: 'InterVar';
-  src: url('/fonts/Inter-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
+    font-family: 'InterVar';
+    src: url('/fonts/Inter-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'ClashGroteskVar';
-  src: url('/fonts/ClashGrotesk-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
+    font-family: 'ClashGroteskVar';
+    src: url('/fonts/ClashGrotesk-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Metrophobic';
-  src: url('/fonts/Metrophobic-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
+    font-family: 'Metrophobic';
+    src: url('/fonts/Metrophobic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+:root {
+    --gradient-main: linear-gradient(106.2deg, #963488 -12.33%, #FC6F32 50.28%, #FF4A59 114.17%);
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
-  color: black;
-  background: #000000;
-  background: linear-gradient(180deg,rgba(0, 0, 0, 1) 36%, rgba(25, 30, 42, 1) 100%);
-  font-family: Inter, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+    background: #000000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 36%, rgba(25, 30, 42, 1) 100%);
+    font-family: Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
-/*@media (prefers-color-scheme: dark) {*/
-/*  html {*/
-/*    color-scheme: dark;*/
-/*  }*/
-/*}*/
+button {
+    cursor: pointer;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+}
