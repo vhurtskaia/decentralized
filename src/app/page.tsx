@@ -4,6 +4,7 @@ import {JSX} from "react";
 import {Header} from "@/widgets/Header";
 import {MainSection} from "@/widgets/MainSection";
 import {ProjectsIntegratedSection} from "@/widgets/ProjectsIntegratedSection";
+import {CrowdsourcingSection} from "@/widgets/CrowdsourcingSection";
 import {Footer} from "@/widgets/Footer";
 
 export default function Home(): JSX.Element {
@@ -13,6 +14,7 @@ export default function Home(): JSX.Element {
       <main>
           <MainSection/>
           <ProjectsIntegratedSection/>
+          <CrowdsourcingSection/>
       </main>
         <Footer/>
     </div>
