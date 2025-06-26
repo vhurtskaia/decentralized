@@ -1,0 +1,14 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    text-align: center;
+    max-width: none;
+}
+
+.photos{
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    /*max-width: 1768px;*/
+}
