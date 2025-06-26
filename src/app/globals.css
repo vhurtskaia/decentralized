@@ -21,6 +21,8 @@
 
 :root {
     --gradient-main: linear-gradient(106.2deg, #963488 -12.33%, #FC6F32 50.28%, #FF4A59 114.17%);
+    --gradient-second: linear-gradient(105.65deg, rgba(150, 52, 136, 0.2) 0.15%, rgba(252, 111, 50, 0.2) 130.58%, rgba(255, 74, 89, 0.2) 263.64%);
+    --border-radius-main: 90px
 }
 
 html,
@@ -32,7 +34,9 @@ body {
 body {
     color: #fff;
     background: #000000;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 36%, rgba(25, 30, 42, 1) 100%);
+    line-height: 1;
+    /*background: linear-gradient(180deg, rgba(0, 0, 0, 1) 36%, rgba(25, 30, 42, 1) 100%);*/
+    background: rgba(0, 0, 0, 1);
     font-family: Inter, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -54,4 +58,27 @@ button {
     color: inherit;
     background-color: inherit;
     border: none;
+}
+
+h1,
+h2{
+    font-family: "ClashGroteskVar", sans-serif;
+    font-weight: 500;
+}
+
+h1{
+    font-size: 128px;
+}
+
+h2{
+    font-size: 64px;
+}
+
+section{
+    max-width: 1760px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
