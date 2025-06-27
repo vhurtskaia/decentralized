@@ -35,6 +35,7 @@ body {
     color: #fff;
     background: #000000;
     line-height: 1;
+    font-size: 24px;
     /*background: linear-gradient(180deg, rgba(0, 0, 0, 1) 36%, rgba(25, 30, 42, 1) 100%);*/
     background: rgba(0, 0, 0, 1);
     font-family: Inter, sans-serif;
@@ -55,6 +56,7 @@ a {
 
 button {
     cursor: pointer;
+    font-size: inherit;
     color: inherit;
     background-color: inherit;
     border: none;
@@ -76,6 +78,7 @@ h2{
 
 section{
     max-width: 1760px;
+    width: 100%;
     margin: 0 auto;
     height: 100vh;
     display: flex;
