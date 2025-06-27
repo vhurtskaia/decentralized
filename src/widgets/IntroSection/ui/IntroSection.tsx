@@ -3,13 +3,13 @@ import Image from "next/image";
 import {Button} from "@/shared/ui";
 import {JSX} from "react";
 
-import styles from "./MainSection.module.css";
+import styles from "./IntroSection.module.css";
 
-export const MainSection = () : JSX.Element => {
+export const IntroSection = () : JSX.Element => {
     return (
         <>
             {/*<Image*/}
-            {/*    src={'/images/widgets/ProjectsIntegratedSection/planet.jpg'}*/}
+            {/*    src={'/images/widgets/IntroSection/planet.jpg'}*/}
             {/*    className={styles.planet}*/}
             {/*    height={1016}*/}
             {/*    width={1016}*/}
@@ -46,26 +46,12 @@ export const MainSection = () : JSX.Element => {
                 </div>
             </section>
 
-            <section>
-                <div>
-                    <h2>LLM Leaderboard</h2>
-                    <Button bg size={'big'}>
-                        Submit your model
-                    </Button>
-                </div>
-                <p>We evaluate LLMs on key benchmarks using the Eleuther AI, a framework to test LLMs on a large number of different evaluation tasks.
-                    The higher the score, the better the LLM.</p>
-                <div>
-                    here is a table
-                </div>
-            </section>
-
             <article>
                 <p>Join our community and harvest $SALT</p>
             </article>
 
             <Image
-                src={'/images/widgets/ProjectsIntegratedSection/BlueDecoration.svg'}
+                src={'/images/widgets/IntroSection/BlueDecoration.svg'}
                 className={styles.decoration__blue}
                 height={504}
                 width={796}
@@ -73,14 +59,12 @@ export const MainSection = () : JSX.Element => {
             />
 
             <Image
-                src={'/images/widgets/ProjectsIntegratedSection/OrangeDecoration.svg'}
+                src={'/images/widgets/IntroSection/OrangeDecoration.svg'}
                 className={styles.decoration__orange}
                 height={504}
                 width={796}
                 alt={'Orange Decoration'}
             />
-
-
         </>
     );
 };

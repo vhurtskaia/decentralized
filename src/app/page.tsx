@@ -6,7 +6,8 @@ import {
     ProjectsIntegratedSection,
     CrowdsourcingSection,
     JoinSection,
-    Footer
+    Footer,
+    LeaderboardSection
 } from "@/widgets";
 
 import styles from "./page.module.css";
@@ -19,6 +20,7 @@ export default function Home(): JSX.Element {
                 <MainSection/>
                 <ProjectsIntegratedSection/>
                 <CrowdsourcingSection/>
+                <LeaderboardSection/>
                 <JoinSection/>
             </main>
             <Footer/>
