@@ -4,7 +4,4 @@
     align-items: flex-start;
     gap: 32px;
     max-width: 1150px;
-    p{
-        font-size: 24px;
-    }
 }
