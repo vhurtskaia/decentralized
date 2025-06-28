@@ -9,7 +9,7 @@ export const photos: TPhotos[]  = [{
     width: 102,
     height: 102,
     alt: 'Telegram'
-},{
+}, {
     src: '/images/widgets/ProjectsIntegratedSection/solana.png',
     width: 334,
     height: 50,
@@ -34,9 +34,9 @@ export const photos: TPhotos[]  = [{
     width: 102,
     height: 102,
     alt: 'Telegram'
-},{
+}, {
     src: '/images/widgets/ProjectsIntegratedSection/solana.png',
     width: 334,
     height: 50,
     alt: 'Solana'
-},]
+}]

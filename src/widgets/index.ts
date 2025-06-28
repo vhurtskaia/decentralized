@@ -5,3 +5,4 @@ export * from './JoinSection';
 export * from './IntroSection';
 export * from './ProjectsIntegratedSection';
 export * from './LeaderboardSection';
+export * from './HarvestSection';

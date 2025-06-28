@@ -16,6 +16,7 @@
     position: absolute;
     right: 0;
     bottom: -62px;
+    z-index: -1;
 }
 
 .decoration__orange,
@@ -23,6 +24,7 @@
     filter: blur(200px);
     position: absolute;
     rotate: 152deg;
+    z-index: -1;
 }
 
 .decoration__blue{
