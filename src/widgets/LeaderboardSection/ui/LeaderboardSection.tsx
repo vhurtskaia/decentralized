@@ -2,7 +2,8 @@ import {JSX} from "react";
 
 import {Button} from "@/shared/ui";
 import {Table} from "@/widgets/LeaderboardSection/ui/Table";
-import { data }from '@/widgets/LeaderboardSection/lib/data'
+
+import {data} from '@/widgets/LeaderboardSection/lib/data'
 
 import styles from "./LeaderboardSection.module.css";
 
