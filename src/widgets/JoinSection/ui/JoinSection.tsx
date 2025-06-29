@@ -1,5 +1,4 @@
 import {JSX} from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 import {Icon} from "@/shared/ui";
@@ -20,13 +19,9 @@ export const JoinSection = (): JSX.Element => {
                 </p>
 
                 <div className={styles.join__links}>
-                    <Link href={'#'}>
-                        <Icon name={'telegram'} size={'big'}/>
-                    </Link>
+                    <Icon href={'#'} name={'telegram'} size={'big'}/>
 
-                    <Link href={'#'}>
-                        <Icon name={'x'} size={'big'}/>
-                    </Link>
+                    <Icon href={'#'} name={'x'} size={'big'}/>
                 </div>
             </div>
 

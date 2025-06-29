@@ -17,13 +17,9 @@ export const Footer = (): JSX.Element => {
 
             <div className={styles.footer__bottom}>
                 <div>
-                    <Link href={'#'}>
-                        <Icon name={'telegram'} size={'small'}/>
-                    </Link>
+                    <Icon href={'#'} name={'telegram'} size={'small'}/>
 
-                    <Link href={'#'}>
-                        <Icon name={'x'} size={'small'}/>
-                    </Link>
+                    <Icon href={'#'} name={'x'} size={'small'}/>
                 </div>
                 <div>
                     <Link href={'#'}>Terms of Use</Link>

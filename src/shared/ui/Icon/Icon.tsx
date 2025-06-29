@@ -3,17 +3,20 @@
 import React, {JSX} from "react";
 import Image from "next/image";
 import styles from "./Icon.module.css";
+import Link from "next/link";
 
 interface IIconProps {
     className?: string;
     size: "small" | "big";
     name: "telegram" | "x";
+    href: string;
 }
 
 export const Icon = ({
                          className,
                          size,
                          name,
+                         href,
                      }: IIconProps): JSX.Element => {
 
     const dimensions = size === "big"
@@ -23,12 +26,16 @@ export const Icon = ({
     const classNames = `${styles.icon} ${className ? ` ${className}` : ""}`
 
     return (
-        <Image
-            alt={name}
-            src={`./images/shared/ui/icon/${name}.svg`}
-            width={dimensions.width}
-            height={dimensions.height}
+        <Link
             className={classNames}
-        />
+            href={href}
+        >
+            <Image
+                alt={name}
+                src={`./images/shared/ui/icon/${name}.svg`}
+                width={dimensions.width}
+                height={dimensions.height}
+            />
+        </Link>
     );
 }

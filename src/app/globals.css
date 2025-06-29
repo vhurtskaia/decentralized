@@ -76,7 +76,9 @@ h2{
 }
 
 section{
-    max-width: 1760px;
+    --paddings: 160px;
+    max-width: calc(1760px + var(--paddings));
+    padding: 0 calc(var(--paddings) / 2);
     width: 100%;
     margin: 0 auto;
     height: 100vh;

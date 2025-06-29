@@ -23,18 +23,19 @@
 .decoration__blue {
     filter: blur(200px);
     position: absolute;
-    rotate: 152deg;
     z-index: -1;
 }
 
 .decoration__blue{
-    left: 20%;
-    top: -20%;
+    left: 25%;
+    top: -14%;
+    rotate: 12deg;
 }
 
 .decoration__orange{
-    left: -20%;
+    left: 8%;
     bottom: -18%;
+    rotate: 24deg;
 }
 
 .buttons{

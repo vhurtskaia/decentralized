@@ -1,5 +1,6 @@
 .section{
     max-width: none;
+    padding: 0;
     p{
         margin-top: auto;
         text-align: center;

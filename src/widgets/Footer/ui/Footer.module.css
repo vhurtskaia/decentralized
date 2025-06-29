@@ -37,6 +37,13 @@
         }
         &:last-child {
             gap: 32px;
+            a{
+                transition: color 0.2s ease 0s;
+            }
+            a:hover,
+            a:focus-within{
+                color: #fff;
+            }
         }
     }
 }
