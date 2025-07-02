@@ -9,6 +9,7 @@ export const Header = (): JSX.Element => {
     return (
         <header className={styles.header}>
             <Button
+                href={'#'}
                 size={'small'}
             >
                 How It Works
@@ -16,6 +17,7 @@ export const Header = (): JSX.Element => {
 
             <Button
                 bg
+                href={'#'}
                 size={'small'}
             >
                 Buy Salt AI
