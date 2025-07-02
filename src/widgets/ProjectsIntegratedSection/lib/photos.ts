@@ -5,37 +5,37 @@ export type TPhotos = {
     alt: string
 }
 export const photos: TPhotos[]  = [{
-    src: '/images/widgets/ProjectsIntegratedSection/telegram.png',
+    src: '/images/widgets/ProjectsIntegratedSection/telegram.webp',
     width: 102,
     height: 102,
     alt: 'Telegram'
 }, {
-    src: '/images/widgets/ProjectsIntegratedSection/solana.png',
+    src: '/images/widgets/ProjectsIntegratedSection/solana.webp',
     width: 334,
     height: 50,
     alt: 'Solana'
 }, {
-    src: '/images/widgets/ProjectsIntegratedSection/arweave.png',
+    src: '/images/widgets/ProjectsIntegratedSection/arweave.webp',
     width: 420,
     height: 100,
     alt: 'Arweave'
 }, {
-    src: '/images/widgets/ProjectsIntegratedSection/bittensor.png',
+    src: '/images/widgets/ProjectsIntegratedSection/bittensor.webp',
     width: 328,
     height: 58,
     alt: 'Bittensor'
 }, {
-    src: '/images/widgets/ProjectsIntegratedSection/icon.png',
+    src: '/images/widgets/ProjectsIntegratedSection/icon.webp',
     width: 102,
     height: 102,
     alt: 'Icon'
 }, {
-    src: '/images/widgets/ProjectsIntegratedSection/telegram.png',
+    src: '/images/widgets/ProjectsIntegratedSection/telegram.webp',
     width: 102,
     height: 102,
     alt: 'Telegram'
 }, {
-    src: '/images/widgets/ProjectsIntegratedSection/solana.png',
+    src: '/images/widgets/ProjectsIntegratedSection/solana.webp',
     width: 334,
     height: 50,
     alt: 'Solana'

@@ -1,41 +1,12 @@
 .section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
     gap: 36px;
     h1{
         background: var(--gradient-main);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
         max-width: 1630px;
         line-height: 100%;
     }
-}
-
-.planet{
-    position: absolute;
-    right: 0;
-    bottom: -62px;
-    z-index: -1;
-}
-
-.decoration__orange,
-.decoration__blue {
-    filter: blur(200px);
-    position: absolute;
-    z-index: -1;
-}
-
-.decoration__blue{
-    left: 25%;
-    top: -14%;
-    rotate: 12deg;
-}
-
-.decoration__orange{
-    left: 8%;
-    bottom: -18%;
-    rotate: 24deg;
 }
 
 .buttons{
@@ -58,6 +29,8 @@
     border-radius: var(--border-radius-main);
     width: 100%;
     padding: 32px;
+    opacity: 0;
+    transform: translateY(150px);
 }
 
 .stats__title{

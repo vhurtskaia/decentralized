@@ -1,29 +1,97 @@
-import Image from "next/image";
+'use client'
 
 import {Button} from "@/shared/ui";
-import {JSX} from "react";
 
 import styles from "./IntroSection.module.css";
 
-export const IntroSection = (): JSX.Element => {
-    return (
-        <section className={styles.section}>
-            <Image
-                src={'/images/widgets/IntroSection/BlueDecoration.svg'}
-                className={styles.decoration__blue}
-                height={504}
-                width={796}
-                alt={'Blue Decoration'}
-            />
+import {useRef} from 'react';
+import gsap from 'gsap';
+import {useGSAP} from '@gsap/react';
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {ScrollToPlugin} from "gsap/ScrollToPlugin";
+import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
 
-            <Image
-                src={'/images/widgets/IntroSection/planet.jpg'}
-                className={styles.planet}
-                height={1016}
-                width={1016}
-                alt={'Planet Decoration'}
-            />
-            <h1>A new economic primitive for funding decentralized AI</h1>
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
+
+export const IntroSection = () => {
+    const statsRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+
+    useSlideScroll({
+        trigger: 'intro',
+        scrollTo: 'projects',
+        scrollToPrev: 'intro'
+    });
+
+    useGSAP(() => {
+        // main animation between top and the bottom of header
+        const el = document.querySelector('.section');
+
+        const mainTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#intro",
+                toggleActions: "play pause play pause",
+                start: "top top",
+                end: "bottom top",
+            }
+        });
+
+        if (el) {
+            mainTl
+                .to(window, {
+                    ease: "power2.inOut",
+                    scrollTo: {
+                        y: el,
+                        offsetY: -94,
+                        autoKill: true,
+                    },
+                })
+                .to(".decor__blue", {
+                    x: 30,
+                    ease: "power2.inOut",
+                    rotate: "32deg",
+                }, "<")
+                .to(titleRef.current, {
+                    background: 'var(--gradient-heading)',
+                }, "<")
+                .to('.stats__item', {
+                    y: 0,
+                    opacity: 1,
+                    stagger: {each: 0.1,},
+                });
+        }
+    });
+
+    useGSAP(() => {
+        // parallax for orange blub
+        ScrollTrigger.create({
+            trigger: "#intro",
+            start: "80px top",
+            end: "+=290% top",
+            scrub: true,
+            animation:
+                gsap.timeline()
+                    .fromTo(".decor__orange", {
+                        ease: "none",
+                        top: "64vh",
+                        left: "-10%",
+                        rotate: "-15deg",
+                    }, {
+                        ease: "none",
+                        top: "250vh",
+                        left: "10%",
+                        rotate: "32deg",
+                    })
+        });
+    })
+
+    return (
+        <section
+            id={'intro'}
+            className={`section ${styles.section}`}>
+
+            <h1 className={'h1'} ref={titleRef}>A new economic primitive for funding decentralized AI</h1>
             <p>We track, rank and pay for the best open source decentralized LLMs to compete against OpenAI</p>
 
             <div className={styles.buttons}>
@@ -31,33 +99,25 @@ export const IntroSection = (): JSX.Element => {
                     Buy Salt AI
                 </Button>
 
-                <Button size={'big'}>
+                <Button ref={buttonRef} size={'big'}>
                     Try Now
                 </Button>
             </div>
 
-            <div className={styles.stats}>
-                <div className={styles.stats__block}>
+            <div ref={statsRef} className={styles.stats}>
+                <div className={`stats__item ${styles.stats__block}`}>
                     <p className={styles.stats__title}>1,873</p>
                     <p>LLM models</p>
                 </div>
-                <div className={styles.stats__block}>
+                <div className={`stats__item ${styles.stats__block}`}>
                     <p className={styles.stats__title}>$326,734</p>
                     <p>Paid to data scientists</p>
                 </div>
-                <div className={styles.stats__block}>
+                <div className={`stats__item ${styles.stats__block}`}>
                     <p className={styles.stats__title}>6,557</p>
                     <p>Developers</p>
                 </div>
             </div>
-
-            <Image
-                src={'/images/widgets/IntroSection/OrangeDecoration.svg'}
-                className={styles.decoration__orange}
-                height={504}
-                width={796}
-                alt={'Orange Decoration'}
-            />
         </section>
     );
 };
