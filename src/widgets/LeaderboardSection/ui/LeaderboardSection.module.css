@@ -1,7 +1,6 @@
 .section{
-    gap: 32px;
     p{
-        line-height: 36px;
+        line-height: var(--lh-text);
     }
 }
 

@@ -3,7 +3,12 @@
     display: flex;
     justify-content: center;
     gap: 24px;
-    @media (max-width: var(--tablet)) {
+    @media (max-width: 1199.98px) {
         padding: 16px 20px;
     }
+
+    @media (max-width: 599.98px) {
+        padding: 8px 10px;
+    }
 }
+

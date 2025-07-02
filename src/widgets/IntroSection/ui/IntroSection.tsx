@@ -2,9 +2,8 @@
 
 import {Button} from "@/shared/ui";
 
-import styles from "./IntroSection.module.css";
-
 import {useRef} from 'react';
+
 import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -12,6 +11,8 @@ import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
+
+import styles from "./IntroSection.module.css";
 
 export const IntroSection = () => {
     const statsRef = useRef<HTMLDivElement>(null);
@@ -85,11 +86,8 @@ export const IntroSection = () => {
     })
 
     return (
-        <section
-            id={'intro'}
-            className={`section ${styles.section}`}>
-
-            <h1 className={'h1'} ref={titleRef}>A new economic primitive for funding decentralized AI</h1>
+        <section id={'intro'}>
+            <h1 className={styles.title} ref={titleRef}>A new economic primitive for funding decentralized AI</h1>
             <p>We track, rank and pay for the best open source decentralized LLMs to compete against OpenAI</p>
 
             <div className={styles.buttons}>

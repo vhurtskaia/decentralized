@@ -3,8 +3,9 @@ import Image from "next/image";
 
 import {Icon} from "@/shared/ui";
 
-import styles from "./JoinSection.module.css";
 import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
+
+import styles from "./JoinSection.module.css";
 
 export const JoinSection = (): JSX.Element => {
     useSlideScroll({
@@ -35,6 +36,7 @@ export const JoinSection = (): JSX.Element => {
             </div>
 
             <Image
+                className={styles.image}
                 src={'/images/widgets/JoinSection/moon.webp'}
                 height={484}
                 width={484}
