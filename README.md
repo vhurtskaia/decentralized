@@ -1,3 +1,6 @@
+## Link to the project
+https://decentralized-pi.vercel.app/
+
 ## Tech Stack
 
 - [Next.js](https://nextjs.org) 15.3.4
