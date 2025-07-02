@@ -26,12 +26,11 @@ export const IntroSection = () => {
 
     useGSAP(() => {
         // main animation between top and the bottom of header
-        const el = document.querySelector('.section');
+        const el = document.querySelector('#intro');
 
         const mainTl = gsap.timeline({
             scrollTrigger: {
-                trigger: "#intro",
-                toggleActions: "play pause play pause",
+                trigger: "#header",
                 start: "top top",
                 end: "bottom top",
             }
@@ -43,7 +42,6 @@ export const IntroSection = () => {
                     ease: "power2.inOut",
                     scrollTo: {
                         y: el,
-                        offsetY: -94,
                         autoKill: true,
                     },
                 })

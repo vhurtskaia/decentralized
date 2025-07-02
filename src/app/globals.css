@@ -24,8 +24,18 @@
     --gradient-second: linear-gradient(105.65deg, rgba(150, 52, 136, 0.2) 0.15%, rgba(252, 111, 50, 0.2) 130.58%, rgba(255, 74, 89, 0.2) 263.64%);
     --gradient-heading: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
     linear-gradient(106.2deg, #FFD6F9 -12.33%, #FFCBB4 50.28%, #FFBEC3 114.17%);
-;
-    --border-radius-main: 90px
+    --border-radius-main: 90px;
+}
+
+:root {
+    --pc: 1759.98px;
+    --pc-small: 1399.98px;
+    --tablet: 1199.98px;
+    --tablet-small: 1000.98px;
+    --mobile: 767.98px;
+    --mobile-small: 599.98px;
+    --mobile-extra-small: 479.98px;
+    --mobile-super-small: 374.98px;
 }
 
 html,
@@ -51,11 +61,11 @@ main {
     position: relative;
 }
 
-section{
+section {
     --paddings: 160px;
     width: 100%;
     max-width: calc(1760px + var(--paddings));
-    padding: 0 calc(var(--paddings) / 2);
+    padding: 40px calc(var(--paddings) / 2);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -84,15 +94,15 @@ button {
 }
 
 h1,
-h2{
+h2 {
     font-family: "ClashGroteskVar", sans-serif;
     font-weight: 500;
 }
 
-h1{
+h1 {
     font-size: 128px;
 }
 
-h2{
+h2 {
     font-size: 64px;
 }

@@ -31,11 +31,9 @@ export const useSlideScroll = ({trigger, scrollTo, scrollToPrev}: IUseSlideScrol
     }
 
     useGSAP(() => {
-        const start = trigger === 'intro' ? '120px top' : "80px top"
-
         ScrollTrigger.create({
             trigger: `#${trigger}`,
-            start: start,
+            start: "80px top",
             end: "+=75% top",
             fastScrollEnd: true,
             onUpdate: self => self.isActive && self.direction === 1 ? scrollToSection(`#${scrollTo}`) : scrollToSection(`#${scrollToPrev}`),

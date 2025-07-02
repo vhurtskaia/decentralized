@@ -28,7 +28,6 @@ export const HarvestSection = (): JSX.Element => {
             start: 'top top',
             end: 'bottom top',
             scrub: 0.2,
-            markers: true,
             animation: gsap.fromTo(nasaRef.current, {
                 y: yOffset,
             }, {
