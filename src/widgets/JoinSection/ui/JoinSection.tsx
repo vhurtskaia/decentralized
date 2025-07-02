@@ -4,10 +4,19 @@ import Image from "next/image";
 import {Icon} from "@/shared/ui";
 
 import styles from "./JoinSection.module.css";
+import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
 
 export const JoinSection = (): JSX.Element => {
+    useSlideScroll({
+        trigger: 'join',
+        scrollTo: 'harvest',
+        scrollToPrev: 'join'
+    });
+
     return (
-        <section className={styles.section}>
+        <section
+            id={'join'}
+            className={styles.section}>
             <div className={styles.join__content}>
                 <h2>Join our community</h2>
                 <p>
@@ -26,8 +35,7 @@ export const JoinSection = (): JSX.Element => {
             </div>
 
             <Image
-                src={'/images/widgets/JoinSection/moon.png'}
-                className={styles.join__moon}
+                src={'/images/widgets/JoinSection/moon.webp'}
                 height={484}
                 width={484}
                 alt={'Planet Decoration'}
