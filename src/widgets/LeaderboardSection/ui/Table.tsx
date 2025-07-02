@@ -20,28 +20,28 @@ export const Table = ({data}: TableProps): JSX.Element => {
 
     return (
         <>
-            <div className={`${styles.table} ${showMore ? styles.show : ''}`}>
-                <div className={styles.table__head}>
-                    <div></div>
-                    <div>#</div>
-                    <div>Model Name</div>
-                    <div>Average</div>
-                    <div>ARC</div>
-                    <div>HellaSwag</div>
-                    <div>MMLU</div>
-                    <div>TruthfulQA</div>
-                    <div>Winogrande</div>
-                    <div>GSM8K</div>
-                    <div>Usage</div>
+            <div className={styles.table__wrapper}>
+                <div className={`${styles.table} ${showMore ? styles.show : ''}`}>
+                    <div className={styles.table__head}>
+                        <div></div>
+                        <div>#</div>
+                        <div>Model Name</div>
+                        <div>Average</div>
+                        <div>ARC</div>
+                        <div>HellaSwag</div>
+                        <div>MMLU</div>
+                        <div>TruthfulQA</div>
+                        <div>Winogrande</div>
+                        <div>GSM8K</div>
+                        <div>Usage</div>
+                    </div>
+
+                    {visibleData.map((item, index) => (
+                        <Row key={index} item={item} index={index} showMore={showMore}/>
+                    ))}
                 </div>
-
-                {visibleData.map((item, index) => (
-                    <Row key={index} item={item} index={index} showMore={showMore} />
-                ))}
-
             </div>
-
-            <ShowMore state={showMore} action={() => setShowMore(!showMore)} />
+            <ShowMore state={showMore} action={() => setShowMore(!showMore)}/>
         </>
     );
 };

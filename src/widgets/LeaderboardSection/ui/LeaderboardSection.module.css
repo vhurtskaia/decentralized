@@ -11,16 +11,29 @@
     justify-content: space-between;
 }
 
+.table__wrapper{
+    overflow-x: scroll;
+    min-width: 100%;
+}
+
 .table{
     font-size: 16px;
     > div{
         display: grid;
-        grid-template-columns: 24px 32px 2.1fr repeat(8, 1fr);
+        grid-template-columns: 24px 32px 326px repeat(8, 150px);
         align-items: center;
         gap: 12px;
         padding: 24px;
         &:nth-child(even){
-            background: #C9D9FF14;
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: #C9D9FF14;
+                z-index: -1;
+                width: 1760px;
+            }
         }
 
         > div{
