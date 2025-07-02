@@ -6,10 +6,18 @@ import {Table} from "@/widgets/LeaderboardSection/ui/Table";
 import {data} from '@/widgets/LeaderboardSection/lib/data'
 
 import styles from "./LeaderboardSection.module.css";
+import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
 
 export const LeaderboardSection = (): JSX.Element => {
+    useSlideScroll({
+        trigger: 'leaderboard',
+        scrollTo: 'join',
+        scrollToPrev: 'leaderboard'
+    });
     return (
-        <section className={styles.section}>
+        <section
+            id={'leaderboard'}
+            className={styles.section}>
             <div className={styles.heading}>
                 <h2>LLM Leaderboard</h2>
 
