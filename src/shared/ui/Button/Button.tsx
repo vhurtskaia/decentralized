@@ -7,7 +7,7 @@ import styles from "./Button.module.css";
 
 interface IButtonProps {
     type?: "button" | "reset" | "submit";
-    ref?: React.RefObject<never>;
+    ref?: React.RefObject<null>;
     className?: string;
     size?: "small" | "big";
     children?: React.ReactNode;
