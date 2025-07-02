@@ -1,39 +1,20 @@
-// import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
 
 import {JSX} from "react";
-import {Button} from "@/shared/ui";
+
+import {
+    Header,
+    Footer,
+} from "@/widgets";
+
+import {PageSlider} from "@/widgets/PageSlider";
 
 export default function Home(): JSX.Element {
-  return (
-    <div className={styles.wrapper}>
-        {/*<Header/>*/}
-      <main className={''}>
-            <Button
-                bg
-                size={'big'}
-            >
-                Buy Spice AI
-            </Button>
-          <Button
-              bg
-              size={'small'}
-          >
-                Buy Spice AI
-            </Button>
-
-          <Button
-              size={'big'}
-          >
-              Buy Spice AI
-          </Button>
-          <Button
-              size={'small'}
-          >
-              Buy Spice AI
-          </Button>
-      </main>
-        {/*<Footer/>*/}
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <PageSlider />
+            <Footer />
+        </>
+    );
 }

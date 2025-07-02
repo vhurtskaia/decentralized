@@ -1,0 +1,19 @@
+.section{
+    p{
+        text-align: center;
+        font-size: 32px;
+        margin-top: 25vh;
+        margin-bottom: auto;
+    }
+}
+
+.image{
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    bottom: 0;
+}

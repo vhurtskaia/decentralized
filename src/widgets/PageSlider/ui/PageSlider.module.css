@@ -1,0 +1,49 @@
+.smooth__wrapper {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.smooth__content {
+    overflow: visible;
+    width: 100%;
+}
+
+.planet{
+    position: absolute;
+    right: 0;
+    top: 12vh;
+    z-index: -2;
+}
+
+.decoration__orange,
+.decoration__blue {
+    filter: blur(200px);
+    position: absolute;
+    z-index: -1;
+    rotate: -15deg;
+}
+
+.decoration__blue{
+    left: 25%;
+    top: -10%;
+}
+
+.decoration__orange{
+    top: 64vh;
+    left: -10%;
+}
+
+.image{
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
