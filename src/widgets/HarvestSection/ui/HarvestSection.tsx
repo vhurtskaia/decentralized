@@ -17,16 +17,22 @@ export const HarvestSection = (): JSX.Element => {
     });
 
     const nasaRef = useRef<HTMLImageElement>(null)
+    const harvestRef = useRef<HTMLElement>(null);
 
     useGSAP(() => {
+        const harvestHeight = harvestRef.current ? harvestRef.current.offsetHeight : 0;
+        const yOffset = -(harvestHeight - 300);
+
         ScrollTrigger.create({
             trigger: `#join`,
-            start: '60% center',
-            scrub: 0.3,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.2,
+            markers: true,
             animation: gsap.fromTo(nasaRef.current, {
-                y: `-125%`,
+                y: yOffset,
             }, {
-                y: `0%`,
+                y: `0px`,
             })
         })
     })
@@ -34,6 +40,7 @@ export const HarvestSection = (): JSX.Element => {
     return (
         <section
             id={'harvest'}
+            ref={harvestRef}
             className={styles.section}>
             <p>Join our community and harvest $SALT</p>
 

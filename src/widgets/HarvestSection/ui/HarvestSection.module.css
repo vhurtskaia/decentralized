@@ -1,4 +1,5 @@
 .section{
+    position: static;
     p{
         text-align: center;
         font-size: 32px;
