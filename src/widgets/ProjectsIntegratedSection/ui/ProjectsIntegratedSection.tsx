@@ -27,7 +27,6 @@ export const ProjectsIntegratedSection = (): JSX.Element => {
             start: 'top center',
             end: 'bottom center',
             scrub: true,
-            markers: true,
             animation: gsap.fromTo("#photos", {
                 x: "0",
                 ease: "none",
