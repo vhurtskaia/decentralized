@@ -27,11 +27,12 @@ export const ProjectsIntegratedSection = (): JSX.Element => {
             start: 'top center',
             end: 'bottom center',
             scrub: true,
+            markers: true,
             animation: gsap.fromTo("#photos", {
                 x: "0",
                 ease: "none",
-            },{
-                x: "-440px",
+            }, {
+                x: "-420px",
                 ease: "none",
             }),
         })
@@ -44,10 +45,12 @@ export const ProjectsIntegratedSection = (): JSX.Element => {
             className={styles.section}>
             <h2>Projects integrated into the Arrakis AI Ecosystem</h2>
 
-            <div id={'photos'} className={styles.photos}>
-                {photos.map((photo, i) => (
-                    <Photo key={i} {...photo} />
-                ))}
+            <div className={styles.photos}>
+                <div id={'photos'} className={styles.photos__container}>
+                    {photos.map((photo, i) => (
+                        <Photo key={i} {...photo} />
+                    ))}
+                </div>
             </div>
         </section>
     );

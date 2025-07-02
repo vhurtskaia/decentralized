@@ -45,6 +45,7 @@ export const PageSlider = (): JSX.Element => {
                 className={styles.planet}
                 height={1016}
                 width={1016}
+                priority={true}
                 alt={'Planet Decoration'}
             />
 

@@ -7,8 +7,21 @@
 }
 
 .photos{
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.photos__container{
     display: flex;
     align-items: center;
     gap: 120px;
-    /*max-width: 1768px;*/
+    width: max-content;
+
+    > img{
+        scroll-snap-align: start;
+    }
 }

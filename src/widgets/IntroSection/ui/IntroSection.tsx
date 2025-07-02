@@ -22,7 +22,7 @@ export const IntroSection = () => {
     useSlideScroll({
         trigger: 'intro',
         scrollTo: 'projects',
-        scrollToPrev: 'intro'
+        scrollToPrev: 'header'
     });
 
     useGSAP(() => {
@@ -39,13 +39,6 @@ export const IntroSection = () => {
 
         if (el) {
             mainTl
-                .to(window, {
-                    ease: "power2.inOut",
-                    scrollTo: {
-                        y: el,
-                        autoKill: true,
-                    },
-                })
                 .to(".decor__blue", {
                     x: 30,
                     ease: "power2.inOut",

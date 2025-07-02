@@ -4,8 +4,14 @@ import {JSX} from "react";
 import {Button} from "@/shared/ui";
 
 import styles from './Header.module.css'
+import {useSlideScroll} from "@/widgets/PageSlider";
 
 export const Header = (): JSX.Element => {
+    useSlideScroll({
+        trigger: 'header',
+        scrollTo: 'intro',
+        scrollToPrev: 'header'
+    });
     return (
         <header id={'header'} className={styles.header}>
             <Button
