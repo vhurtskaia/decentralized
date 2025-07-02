@@ -4,9 +4,8 @@ import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
-import {ScrollSmoother} from "gsap/ScrollSmoother";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
 
 interface IUseSlideScroll {
     trigger?: string;
@@ -21,14 +20,15 @@ export const useSlideScroll = ({trigger, scrollTo, scrollToPrev}: IUseSlideScrol
         if (!targetEl || gsap.isTweening(window)) return;
 
         gsap.to(window, {
+            duration: 0.5,
+            ease: "power1.out",
             scrollTo: {
                 y: targetEl,
                 autoKill: true,
             },
-            duration: 0.5,
-            ease: "power2.inOut",
         });
     }
+
 
     useGSAP(() => {
         const start = trigger === 'header' ? 'top top' : "80px top"
@@ -36,15 +36,9 @@ export const useSlideScroll = ({trigger, scrollTo, scrollToPrev}: IUseSlideScrol
         ScrollTrigger.create({
             trigger: `#${trigger}`,
             start: start,
-            end: "+=75% top",
+            end: "+=80% top",
             fastScrollEnd: true,
             onUpdate: self => self.isActive && self.direction === 1 ? scrollToSection(`#${scrollTo}`) : scrollToSection(`#${scrollToPrev}`),
         });
-
-        ScrollSmoother.create({
-            smooth: 0,
-            speed: 1,
-            effects: true
-        });
-    });
-};
+    })
+}

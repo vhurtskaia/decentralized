@@ -1,16 +1,17 @@
-import {JSX, useRef} from "react";
+'use client'
 
-import styles from "./ProjectsIntegratedSection.module.css"
-import {photos} from "@/widgets/ProjectsIntegratedSection/lib/photos";
-import {Photo} from "@/widgets/ProjectsIntegratedSection/ui/Photo";
+import {JSX, useRef} from "react";
 
 import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {ScrollToPlugin} from "gsap/ScrollToPlugin";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+import {photos} from "@/widgets/ProjectsIntegratedSection/lib/photos";
+import {Photo} from "@/widgets/ProjectsIntegratedSection/ui/Photo";
 import {useSlideScroll} from "@/widgets/PageSlider";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
+import styles from "./ProjectsIntegratedSection.module.css"
 
 export const ProjectsIntegratedSection = (): JSX.Element => {
     useSlideScroll({

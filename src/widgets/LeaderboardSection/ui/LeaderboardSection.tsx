@@ -1,12 +1,13 @@
+"use client"
+
 import {JSX} from "react";
 
+import {data} from '@/widgets/LeaderboardSection/lib/data'
 import {Button} from "@/shared/ui";
 import {Table} from "@/widgets/LeaderboardSection/ui/Table";
-
-import {data} from '@/widgets/LeaderboardSection/lib/data'
+import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
 
 import styles from "./LeaderboardSection.module.css";
-import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
 
 export const LeaderboardSection = (): JSX.Element => {
     useSlideScroll({
@@ -14,6 +15,7 @@ export const LeaderboardSection = (): JSX.Element => {
         scrollTo: 'join',
         scrollToPrev: 'leaderboard'
     });
+
     return (
         <section
             id={'leaderboard'}

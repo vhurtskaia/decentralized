@@ -1,13 +1,14 @@
 'use client'
 
 import React, {JSX, useRef} from "react";
-import {useGSAP} from "@gsap/react";
 import Image from "next/image";
 import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 import {useSlideScroll} from "@/widgets/PageSlider";
 import styles from "./HarvestSection.module.css";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 export const HarvestSection = (): JSX.Element => {
     useSlideScroll({
@@ -27,7 +28,7 @@ export const HarvestSection = (): JSX.Element => {
             trigger: `#join`,
             start: 'top top',
             end: 'bottom top',
-            scrub: 0.2,
+            scrub: true,
             animation: gsap.fromTo(nasaRef.current, {
                 y: yOffset,
             }, {

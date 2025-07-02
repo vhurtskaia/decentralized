@@ -5,6 +5,8 @@
         font-size: 32px;
         margin-top: 25vh;
         margin-bottom: auto;
+        position: relative;
+        z-index: -1;
     }
 }
 

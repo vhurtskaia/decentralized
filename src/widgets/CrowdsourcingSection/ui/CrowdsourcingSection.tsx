@@ -1,15 +1,16 @@
 "use client"
 
-import {Button} from "@/shared/ui";
+import Image from "next/image";
 import React, {JSX, useRef} from "react";
-
-import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
+import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import gsap from "gsap";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+import {Button} from "@/shared/ui";
+import {useSlideScroll} from "@/widgets/PageSlider/model/useSlideScroll";
 
 import styles from "./CrowdsourcingSection.module.css";
-import Image from "next/image";
 
 export const CrowdsourcingSection = (): JSX.Element => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -39,7 +40,7 @@ export const CrowdsourcingSection = (): JSX.Element => {
                         x: viewportWidth + 300,
                         y: viewportHeight + 200,
                         duration: 1,
-                        ease: "power1.inOut",
+                        ease: "power1.out",
                         delay: 0.2
                     })
         })
