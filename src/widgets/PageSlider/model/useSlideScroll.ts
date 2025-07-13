@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
-import {useEffect, useState} from "react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
 
@@ -15,25 +14,12 @@ interface IUseSlideScroll {
 }
 
 export const useSlideScroll = ({trigger, scrollTo, scrollToPrev}: IUseSlideScroll) => {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        setIsMobile(window.innerWidth <= 767);
-
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 767);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
     let isScrolling = false;
 
     const scrollToSection = (targetId: string) => {
         const targetEl = document.querySelector(targetId);
 
-        if (typeof window === 'undefined' || isScrolling || !targetEl || isMobile) return;
+        if (typeof window === 'undefined' || isScrolling || !targetEl) return;
 
         isScrolling = true;
 
@@ -53,25 +39,24 @@ export const useSlideScroll = ({trigger, scrollTo, scrollToPrev}: IUseSlideScrol
     let lastDirection: number | null = null;
 
     useGSAP(() => {
-        if (isMobile) return;
+        if(ScrollTrigger.isTouch !== 1){
+            const start = trigger === 'header' ? 'top top' : "80px top";
+            ScrollTrigger.create({
+                trigger: `#${trigger}`,
+                start,
+                end: "+=80% top",
+                onUpdate: self => {
+                    if (self.direction !== lastDirection) {
+                        lastDirection = self.direction;
 
-        const start = trigger === 'header' ? 'top top' : "80px top";
-
-        ScrollTrigger.create({
-            trigger: `#${trigger}`,
-            start,
-            end: "+=80% top",
-            onUpdate: self => {
-                if (self.direction !== lastDirection) {
-                    lastDirection = self.direction;
-
-                    if (self.isActive && self.direction === 1) {
-                        scrollToSection(`#${scrollTo}`);
-                    } else if (self.isActive && self.direction === -1) {
-                        scrollToSection(`#${scrollToPrev}`);
+                        if (self.isActive && self.direction === 1) {
+                            scrollToSection(`#${scrollTo}`);
+                        } else if (self.isActive && self.direction === -1) {
+                            scrollToSection(`#${scrollToPrev}`);
+                        }
                     }
-                }
-            },
-        });
-    }, [isMobile]);
+                },
+            });
+        }
+    }, [ScrollTrigger.isTouch]);
 }
