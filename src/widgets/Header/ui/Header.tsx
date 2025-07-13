@@ -22,7 +22,6 @@ export const Header = (): JSX.Element => {
             trigger: "#header",
             start: "top top",
             end: "bottom top",
-            scrub: true,
             animation: gsap.timeline()
                 .to("#decor-blue", {
                     ease: "none",

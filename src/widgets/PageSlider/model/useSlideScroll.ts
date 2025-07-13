@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
+import {useEffect, useState} from "react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
 
@@ -14,13 +15,25 @@ interface IUseSlideScroll {
 }
 
 export const useSlideScroll = ({trigger, scrollTo, scrollToPrev}: IUseSlideScroll) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 767);
+
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 767);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     let isScrolling = false;
 
     const scrollToSection = (targetId: string) => {
-        if (typeof window === 'undefined' || isScrolling) return;
-
         const targetEl = document.querySelector(targetId);
-        if (!targetEl) return;
+
+        if (typeof window === 'undefined' || isScrolling || !targetEl || isMobile) return;
 
         isScrolling = true;
 
