@@ -28,31 +28,50 @@ export const useSlideScroll = ({trigger, scrollTo, scrollToPrev}: IUseSlideScrol
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    let isScrolling = false;
+
     const scrollToSection = (targetId: string) => {
         const targetEl = document.querySelector(targetId);
 
-        if (typeof window === 'undefined' || !targetEl || gsap.isTweening(window)) return;
+        if (typeof window === 'undefined' || isScrolling || !targetEl || isMobile) return;
+
+        isScrolling = true;
 
         gsap.to(window, {
             duration: 0.5,
             ease: "power1.out",
             scrollTo: {
                 y: targetEl,
-                autoKill: true,
+                autoKill: false,
             },
+            onComplete: () => {
+                isScrolling = false;
+            }
         });
-    }
+    };
+
+    let lastDirection: number | null = null;
 
     useGSAP(() => {
-        if (!isMobile) {
-        const start = trigger === 'header' ? 'top top' : "80px top"
+        if (isMobile) return;
+
+        const start = trigger === 'header' ? 'top top' : "80px top";
 
         ScrollTrigger.create({
             trigger: `#${trigger}`,
-            start: start,
+            start,
             end: "+=80% top",
-            fastScrollEnd: true,
-            onUpdate: self => self.isActive && self.direction === 1 ? scrollToSection(`#${scrollTo}`) : scrollToSection(`#${scrollToPrev}`),
+            onUpdate: self => {
+                if (self.direction !== lastDirection) {
+                    lastDirection = self.direction;
+
+                    if (self.isActive && self.direction === 1) {
+                        scrollToSection(`#${scrollTo}`);
+                    } else if (self.isActive && self.direction === -1) {
+                        scrollToSection(`#${scrollToPrev}`);
+                    }
+                }
+            },
         });
-    }}, [isMobile])
+    }, [isMobile]);
 }
